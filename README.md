@@ -8,6 +8,7 @@
 
 ```bash
 git clone --branch server-db https://github.com/ludmilastemp/Networks-MIPT.git
+cd Networks-MIPT
 make
 ```
 
