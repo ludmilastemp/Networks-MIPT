@@ -24,7 +24,6 @@ make
 ./db.out client tcp
 ```
 
-
 ### UDP
 Запуск UDP сервера:
 ```bash
@@ -47,3 +46,7 @@ get <KEY>
 ```
 set <KEY> <VALUE>
 ```
+
+## Запись трафика
+ 
+Записи трафика TCP и UDP взаимодействия для теста `TestGetSetGet*()` расположены в `cap/`.
