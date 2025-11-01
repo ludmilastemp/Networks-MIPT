@@ -7,7 +7,7 @@
 Проект собирается с помощью системы сборки Make.
 
 ```bash
-git clone --branch NAT_hole_punching https://github.com/ludmilastemp/Networks-MIPT.git
+git clone --branch NAT-hole-punching https://github.com/ludmilastemp/Networks-MIPT.git
 cd Networks-MIPT
 make
 ```
