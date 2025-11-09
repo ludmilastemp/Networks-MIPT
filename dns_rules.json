@@ -1,0 +1,12 @@
+[
+  {
+    "action": "ACCEPT",
+    "name": "ya.ru",
+    "ancount": 2
+  },
+  {
+    "action": "DROP",
+    "name": "ya.ru",
+    "ttl": 200
+  }
+]
