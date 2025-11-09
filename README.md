@@ -2,8 +2,6 @@
 
 ## Сборка
 
-Проект собирается с помощью системы сборки Make.
-
 ```bash
 git clone --branch NFQUEUE https://github.com/ludmilastemp/Networks-MIPT.git
 cd Networks-MIPT
