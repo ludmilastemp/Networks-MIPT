@@ -18,11 +18,14 @@ void ClientTCP(int port)
         return;
     }
 
-    SSL_CTX* ctx = startClientTLS();
+    SSL_CTX* ctx = startClientTLS();    
+    assert(ctx);
+
     SSL* ssl = SSL_new(ctx);
     SSL_set_fd(ssl, socketfd);
     int check = SSL_connect(ssl);
     assert(check > 0);
+    assert(SSL_get_verify_result(ssl) == X509_V_OK);
 
     char symbol = 'a';
     while(true) {

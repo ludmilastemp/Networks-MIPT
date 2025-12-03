@@ -2,6 +2,7 @@
 #include <vector>
 #include <unordered_map>
 #include <memory>
+#include <cassert>
 
 #include "network.hpp"
 
@@ -40,6 +41,7 @@ void ServerTCP(int port, std::string crt, std::string key)
     }
 
     SSL_CTX* ctx = startServerTLS(crt.c_str(), key.c_str());
+    assert(ctx);
 
     fd_set fd_list;   
     FD_ZERO(&fd_list);
