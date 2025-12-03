@@ -19,7 +19,7 @@ bool startServerTCP(int server_port, int socketfd, int nClient = 0);
 bool startClientTCP(int server_port, int socketfd);
 
 SSL_CTX* startServerTLS(const char* crt_path, const char* key_path);
-SSL_CTX* startClientTLS();
+SSL_CTX* startClientTLS(const char* crt_path);
 
 void gameSend(SSL* ssl, char symbol);
 char gameRecv(SSL* ssl);

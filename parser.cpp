@@ -7,7 +7,8 @@
 void ClientConfig::print() const {
     std::cout << "Client Configuration:\n"
         << "  Address: " << addr << "\n"
-        << "  Port: " << port << "\n";
+        << "  Port: " << port << "\n"
+        << "  Crt: " << crt << "\n";
 }
 
 void ServerConfig::print() const {
@@ -22,7 +23,8 @@ class ClientCommandLineParser {
 private:
     std::map<std::string, std::string> requiredArgs = {
         {"--addr", ""},
-        {"--port", ""}
+        {"--port", ""},
+        {"--crt", ""}
     };
 
 public:
@@ -54,7 +56,9 @@ public:
                     config.addr = value;
                 } else if (arg == "--port") {
                     config.port = std::stoi(value);
-                } 
+                } else if (arg == "--crt") {
+                    config.crt = value;
+                }
                 
                 requiredArgs[arg] = value;
             } else {
@@ -79,8 +83,9 @@ private:
             << "Required Options:\n"
             << "  --addr ADDRESS         Local machine IP address\n"
             << "  --port PORT            Local machine port\n"
+            << "  --crt  PATH            Path to crt\n"
             << "Example:\n"
-            << "  " << programName << " client --addr 1.1.1.1 --port 1234\n"
+            << "  " << programName << " client --addr 1.1.1.1 --port 1234 --crt cert/crt.crt\n"
 
             << std::endl;
     }

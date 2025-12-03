@@ -24,5 +24,5 @@ openssl req -new -newkey rsa:4096 -x509 -sha256 -days 365 -nodes -out cert/crt.c
 ```
 Запуск TCP клиента:
 ```bash
-./tls.out client --addr 1.1.1.1 --port 1234
+./tls.out client --addr 1.1.1.1 --port 1234 --crt cert/crt.crt
 ```

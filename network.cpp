@@ -165,7 +165,11 @@ SSL_CTX* startServerTLS(const char* crt_path, const char* key_path) {
     return ssl_ctx;
 }
 
-SSL_CTX* startClientTLS() {
+SSL_CTX* startClientTLS(const char* crt_path) {
+    if (crt_path == nullptr) {
+        return nullptr;
+    }
+
     SSL_CTX* ssl_ctx = SSL_CTX_new(TLS_method());
     if (!ssl_ctx) {
         return nullptr;
@@ -174,7 +178,7 @@ SSL_CTX* startClientTLS() {
     SSL_CTX_set_options(ssl_ctx, SSL_OP_ALL|SSL_OP_NO_SSLv2|SSL_OP_NO_SSLv3);
 
     SSL_CTX_set_verify(ssl_ctx, SSL_VERIFY_PEER, NULL);
-    if (!SSL_CTX_load_verify_locations(ssl_ctx, "cert/crt.crt", NULL)) {
+    if (!SSL_CTX_load_verify_locations(ssl_ctx, crt_path, NULL)) {
         return nullptr;
     }
 

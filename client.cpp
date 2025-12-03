@@ -5,7 +5,7 @@
 
 #include "network.hpp"
 
-void ClientTCP(int port)
+void ClientTCP(int port, std::string crt)
 {
     int socketfd = createSocketTCP();
     if (socketfd == -1) {
@@ -18,7 +18,7 @@ void ClientTCP(int port)
         return;
     }
 
-    SSL_CTX* ctx = startClientTLS();    
+    SSL_CTX* ctx = startClientTLS(crt.c_str());    
     assert(ctx);
 
     SSL* ssl = SSL_new(ctx);

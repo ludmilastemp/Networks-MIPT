@@ -8,6 +8,7 @@ class ClientConfig {
 public:
     std::string addr;
     uint16_t port;
+    std::string crt;
 
     void print() const;
 };

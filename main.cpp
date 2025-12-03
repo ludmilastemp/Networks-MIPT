@@ -7,7 +7,7 @@
 #include "parser.hpp"
 
 void ServerTCP(int port, std::string crt, std::string key);
-void ClientTCP(int port);
+void ClientTCP(int port, std::string crt);
 
 int main(int argc, char* argv[]) {
     if (argc == 1) {
@@ -33,7 +33,7 @@ int main(int argc, char* argv[]) {
         if (!ClientCommandLineParse(config, argc, argv))
             return 0;
 
-        ClientTCP(config.port);
+        ClientTCP(config.port, config.crt);
     }
     else {
         std::cout << "Usage: " << argv[0] << " server or client\n\n";
